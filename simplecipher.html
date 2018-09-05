@@ -1,0 +1,26 @@
+<!-- "If he had anything confidential to say, he wrote it in cipher, that is, by so changing the order of the letters of the alphabet, that not a word could be made out. If anyone wishes to decipher these, and get at their meaning, he must substitute the fourth letter of the alphabet, namely D, for A, and so with the others." —Suetonius, Life of Julius Caesar
+Your task is to create a simple shift cipher like the Caesar Cipher.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var whatiwant = prompt('Введи текст для шифрования',''); 
+    function toCipher (whatiwant) {
+        var map = { // ABCDEF to Cesar Cipher
+            a: 'x', b: 'y', c: 'z', d: 'a', e: 'b', f: 'c', g: 'd', h: 'e', i: 'f', j: 'g', k: 'h', l: 'i',
+            m: 'j', n: 'k', o: 'l', p: 'm', q: 'n', r: 'o', s: 'p', t: 'q', u: 'r', v: 's', w: 't', x: 'u', y: 'v', z: 'w',
+        };   
+        return whatiwant.split('').map(function(v) { // разделяет на буквы введенный текст, затем трансформирует их в порядке соответствия кода Цезаря
+            return map[v]; 
+        }).join('');        // соединяет новые буквы в слово
+    };
+    alert(toCipher(whatiwant)); // выводит полученное слово
+    </script>
+</body>
+</html>
