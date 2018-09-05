@@ -1,0 +1,32 @@
+<!-- Given a DNA strand, return its RNA complement (per RNA transcription).
+Both DNA and RNA strands are a sequence of nucleotides.
+The four nucleotides found in DNA are adenine (A), cytosine (C), guanine (G) and thymine (T).
+The four nucleotides found in RNA are adenine (A), cytosine (C), guanine (G) and uracil (U).
+Given a DNA strand, its transcribed RNA strand is formed by replacing each nucleotide with its complement:
+G -> C
+C -> G
+T -> A
+A -> U -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var DNA = prompt('Введи 4 нуклеотида ДНК','');        
+        function toRNA (DNA) {  // объявляем функцию к введенным в prompt буквам
+            var splitString = DNA.split("");        // разделяем введенную строку на элементы
+            var newmassive = splitString.map(function(base) {   // трансформируем массив путем замены элементов
+            return {C:'G', G:'C', A:'U', T:'A'}[base];
+            })
+            var joinArray = newmassive.join("");    // соединяем элементы нового массива    
+            return joinArray;       // возвращаем новый массив
+        };
+        alert(toRNA(DNA));      // выводим результат на экран
+    </script>
+</body>
+</html>
