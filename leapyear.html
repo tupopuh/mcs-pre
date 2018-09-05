@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var Year = prompt('Введи год','');
+        if (!Year) {
+            alert('Пожалуйста, обнови страницу и напиши год');
+        }
+        else {
+            if (Year % 400 == 0 || (Year % 4 == 0 && Year % 100 != 0)) { 
+                alert('Високосный!');  
+            }
+            else
+            alert('Невисокосный!'); 
+        } 
+    </script>
+</body>
+</html>
